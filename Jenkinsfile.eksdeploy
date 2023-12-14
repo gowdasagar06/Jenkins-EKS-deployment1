@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("git-checkout"){
             steps{
-                git branch: 'master', credentialsId: 'git-creds', url: 'https://github.com/gowdasagar06/Jenkins-EKS-deployment.git'
+                git branch: 'master', url: 'https://github.com/gowdasagar06/Jenkins-EKS-deployment.git'
             }
         }
         stage("build"){
