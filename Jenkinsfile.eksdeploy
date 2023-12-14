@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("git-checkout"){
             steps{
-                git branch: 'master', url: 'https://github.com/gowdasagar06/Jenkins-EKS-deployment.git'
+                git branch: 'master', url: 'https://github.com/gowdasagar06/Jenkins-EKS-deployment1.git'
             }
         }
         stage("build"){
@@ -43,7 +43,7 @@ pipeline{
                     sudo docker push 391964367856.dkr.ecr.ap-south-1.amazonaws.com/tomcat-jenkins-eks-deploy:$BUILD_TAG
                     sudo docker rmi 391964367856.dkr.ecr.ap-south-1.amazonaws.com/tomcat-jenkins-eks-deploy:$BUILD_TAG
                 '''
-                //be specific on the java-app part becouse this should match with your repo name or else docker push will show retrying error
+                //be specific on the java-app part because this should match with your repo name or else docker push will show retrying error
             }
         }
         stage("deploy-to-eks"){
